@@ -1,0 +1,132 @@
+</html>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="shortcut icon" href="assets/img/MWS.png" type="image/x-icon">
+    <!-- import bootstrap css -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- import main style -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Data Mining Results</title>
+    <style>
+        p {
+            text-align: right;
+        }
+
+        pre {
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- start header  -->
+    <header id="home">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="text-capitalize">Data Mining results</h1>
+                <button type="button" class="btn btn-outline-success">
+                    <a class="link-light"
+                        href="https://colab.research.google.com/drive/1zkhnIv25x5XaYRCZZCzSm7LL9IoboK83?usp=sharing"
+                        target="_blank"> Go To colab Jupyter notebook </a>
+                </button>
+            </div>
+        </div>
+    </header>
+    <!-- end header  -->
+    <main>
+        <div class="container my-3">
+            <div class="row">
+                <div class="col-md-12 my-3">
+                    <h2 class="text-center">مصفوفة الارتباط</h2>
+                    <img src="assets/img/corr.png" class="w-100" />
+                </div>
+                <div class="col-12 my-3">
+                    <p>
+                        نلاحظ مصفوفة الترابط القيم القريبة من 1 و 1- تكون على ارتباط قوي بالنوع طريدة او عكسية
+                        وكلما اقتربت القيم من الصفر يقل الترابط
+                        من 1 الى 0.5 يكون االرتباط قوي و من 0.5 الى 0 يكون االرتباط ضعيف
+                        في حالة الصفر ال يوجد ارتباط
+                    </p>
+                </div>
+                <div class="col-md-6 my-3">
+                    <h2 class="text-center mb-4">توزع الاصناف قبل الموازنة</h2>
+                    <img src="assets/img/output1.png" class="w-100" />
+                </div>
+                <div class="col-md-6 my-3">
+                    <h2 class="text-center mb-4">توزع الاصناف بعد الموازنة</h2>
+                    <img src="assets/img/output2.png" class="w-100" />
+                </div>
+                <div class="col-md-12 my-3">
+                    <p>
+                        نلاحظ عدد االصناف بالصف رقم 9 اكبر من االمثلة المتبقية وبالتالي من الممكن ان
+                        ينحاز التصنيف للصف رقم 9 اثناء التوقع
+
+                    </p>
+                    <p>
+                        نقوم بموازنة الاصناف وتوليد امثلة جديدة باستخدام SMOTE
+                    </p>
+                </div>
+                <div class="col-md-12 my-3">
+                    <h2 class="text-center mb-4">حساب المقاييس التالية في نموذج LogisticRegression</h2>
+                    <img src="assets/img/19.png" class="w-100" />
+                </div>
+                <div class="col-md-12 my-3">
+                    <h2>الاستنتاجات المستخلصة :</h2>
+                    <p>
+                        من القيم السابقة تكون صحة النموذج في التوقع منخفضة
+                    </p>
+                    <p>
+                        ودقة النموذج في تصنيف الامثلة الموجبة منخفضة
+                    </p>
+                    <p>
+                        ومقياس االستنكار منخقضة اي دقة النوذج في التعرف على الامثلة الموجبة
+                    </p>
+                    <p>
+                        ومقياس Score 1F مقياس موازنة الدقة واالستنكار معا منخفضة
+
+                    </p>
+                </div>
+
+                <div class="col-md-12 my-3">
+                    <h2 class="text-center mb-4">حساب المقاييس التالية في نموذج DecisionTreeClassifier</h2>
+                    <img src="assets/img/21.png" class="w-100" />
+                </div>
+                <div class="col-md-12 my-3">
+                    <h2>الاستنتاجات المستخلصة :</h2>
+                    <p>
+                        من القيم السابقة تكون صحة النموذج في التوقع جيدة
+                    </p>
+                    <p>
+                        ودقة النموذج في تصنيف الامثلة الموجبة جيدة
+                    </p>
+                    <p>
+                        ومقياس الاستنكار جيد اي دقة النوذج في التعرف على الامثلة الموجبة
+                    </p>
+                    <p>
+                        ومقياس F1 Score مقياس موازنة الدقة والاستنكار معا جيدة 
+                    </p>
+                </div>
+
+
+
+            </div>
+        </div>
+    </main>
+    <!-- start footer  -->
+    <footer class="py-3">
+        <div class="container text-center">
+            <p class="text-center m-0">All Rights Reseved &copy; Web Data Mining 2024</p>
+        </div>
+    </footer>
+    <!-- end footer  -->
+    <!-- import bootstrap js  -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
