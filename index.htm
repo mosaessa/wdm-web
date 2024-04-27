@@ -32,7 +32,7 @@
                 <h1 class="text-capitalize">Data Mining results</h1>
                 <button type="button" class="btn btn-outline-success">
                     <a class="link-light"
-                        href="https://colab.research.google.com/drive/1oCo_yHKd_Hjfi-k-9nvuHRKovboy9oe_?usp=sharing#scrollTo=9GRb1BYui31Y"
+                        href="https://colab.research.google.com/drive/1oCo_yHKd_Hjfi-k-9nvuHRKovboy9oe_?usp=sharing"
                         target="_blank"> Go To colab Jupyter notebook </a>
                 </button>
             </div>
@@ -41,80 +41,64 @@
     <!-- end header  -->
     <main>
         <div class="container my-3">
+            <h2 class="text-center mb-3">مصفوفة الارتباط</h2>
             <div class="row">
-                <div class="col-md-12 my-3">
-                    <h2 class="text-center">مصفوفة الارتباط</h2>
+                <div class="col-md-6 my-3">
                     <img src="assets/img/corr.png" class="w-100" />
                 </div>
-                <div class="col-12 my-3">
-                    <p>
-                        نلاحظ مصفوفة الترابط القيم القريبة من 1 و 1- تكون على ارتباط قوي بالنوع طريدة او عكسية
-                        وكلما اقتربت القيم من الصفر يقل الترابط
-                        من 1 الى 0.5 يكون االرتباط قوي و من 0.5 الى 0 يكون االرتباط ضعيف
-                        في حالة الصفر ال يوجد ارتباط
-                    </p>
-                </div>
                 <div class="col-md-6 my-3">
-                    <h2 class="text-center mb-4">توزع الاصناف قبل الموازنة</h2>
+                    <img src="assets/img/corr2.png" class="w-100" />
+                </div>
+                <h2 class="text-center my-3">توزع الاصناف </h2>
+                <div class="col-md-4 my-3">
+                    <h3 class="text-center my-3">قبل</h3>
                     <img src="assets/img/output1.png" class="w-100" />
                 </div>
-                <div class="col-md-6 my-3">
-                    <h2 class="text-center mb-4">توزع الاصناف بعد الموازنة</h2>
-                    <img src="assets/img/output2.png" class="w-100" />
+                <div class="col-md-4">
+                    <p class="my-3">  قمنا بعمل موازنة باستخدام مكتبة Smote </p>
                 </div>
-                <div class="col-md-12 my-3">
-                    <p>
-                        نلاحظ عدد االصناف بالصف رقم 9 اكبر من االمثلة المتبقية وبالتالي من الممكن ان
-                        ينحاز التصنيف للصف رقم 9 اثناء التوقع
-
-                    </p>
-                    <p>
-                        نقوم بموازنة الاصناف وتوليد امثلة جديدة باستخدام SMOTE
-                    </p>
+                <div class="col-md-4">
+                    <h3 class="text-center my-3">بعد</h3>
+                        <img src="assets/img/output2.png" class="w-100" />
                 </div>
-                <div class="col-md-12 my-3">
-                    <h2 class="text-center mb-4">حساب المقاييس التالية في نموذج LogisticRegression</h2>
-                    <img src="assets/img/19.png" class="w-100" />
+                <div class="table-responsive">
+                    <table class="table table-primary">
+                        <thead>
+                            <tr>
+                                <th scope="col">Logistic Regression</th>
+                                <th scope="col">Decision Tree</th>
+                                <th scope="col">Naive Bayes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="">
+                                <td scope="row"><img src="assets/img/lr.png" class="img-fluid" alt=""></td>
+                                <td><img src="assets/img/dt.png" class="img-fluid" alt=""></td>
+                                <td><img src="assets/img/nb.png" class="img-fluid" alt=""></td>
+                            </tr>
+                            <tr>
+                                <td scope="row" colspan="3">
+                                    <img src="assets/img/res.png" class="w-100" alt="">
+                                </td>
+                            </tr>
+                            <tr class="">
+                                <td scope="row" colspan="3">
+                                    <div class="col-md-12 my-3">
+                                        <h2>الاستنتاجات المستخلصة :</h2>
+                                        <p> نستنتج من النتائج السابقة أن Decision Tree يحقق أداء أفضل بكثير ويمكن أن
+                                            يعود السبب أن شجرة القرار لها القدرة على اكتشاف العلاقات الغير خطية بين
+                                            الميزات على عكس الانحدار الخطي الذي يفترض وجود علاقة خطية بين المتغيرات لذلك
+                                            يكون غير فعال بينما نموذج غاوص يفترض أن المتغيرات مستقلة كما ان مصفوفة
+                                            الارتباط كشفت عن وجود علاقة خطية ضعيفة بين المتغيرات فقد يقوم نموذج بايز
+                                            بتفسير العلاقات بطريقة خاطئة وبالتالي يحقق هذا الأداء الضعيف. لذلك في حالتنا
+                                            ومع وجد علاقة غير خطية بين المتغيرات يكون نموذج شجرة القرار هو الخيار الصحيح
+                                            حيث يمكنه التعامل معها بشكل فعال وتحقيق دقة جيدة. </p>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-                <div class="col-md-12 my-3">
-                    <h2>الاستنتاجات المستخلصة :</h2>
-                    <p>
-                        من القيم السابقة تكون صحة النموذج في التوقع منخفضة
-                    </p>
-                    <p>
-                        ودقة النموذج في تصنيف الامثلة الموجبة منخفضة
-                    </p>
-                    <p>
-                        ومقياس االستنكار منخقضة اي دقة النوذج في التعرف على الامثلة الموجبة
-                    </p>
-                    <p>
-                        ومقياس Score 1F مقياس موازنة الدقة واالستنكار معا منخفضة
-
-                    </p>
-                </div>
-
-                <div class="col-md-12 my-3">
-                    <h2 class="text-center mb-4">حساب المقاييس التالية في نموذج DecisionTreeClassifier</h2>
-                    <img src="assets/img/21.png" class="w-100" />
-                </div>
-                <div class="col-md-12 my-3">
-                    <h2>الاستنتاجات المستخلصة :</h2>
-                    <p>
-                        من القيم السابقة تكون صحة النموذج في التوقع جيدة
-                    </p>
-                    <p>
-                        ودقة النموذج في تصنيف الامثلة الموجبة جيدة
-                    </p>
-                    <p>
-                        ومقياس الاستنكار جيد اي دقة النوذج في التعرف على الامثلة الموجبة
-                    </p>
-                    <p>
-                        ومقياس F1 Score مقياس موازنة الدقة والاستنكار معا جيدة 
-                    </p>
-                </div>
-
-
-
             </div>
         </div>
     </main>
